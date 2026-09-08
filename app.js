@@ -199,7 +199,7 @@ const dialogueData={
   6:{bx:330,by:757,bw:324,bh:292,tx:357,ty:815,tw:270,th:210,bubble:'assets/dialogue/bubble-07.png',text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:15},
   7:{bx:310,by:958,bw:430,bh:248,tx:345,ty:1055,tw:370,th:135,bubble:'assets/dialogue/bubble-08.png',text:'나무 표지판에\n써져 있는 글자를 읽어보자냥!\n정답을 입력해봐!',size:15},
   8:null,
-  9:{bx:292,by:1003,bw:502,bh:263,tx:338,ty:1068,tw:425,th:155,bubble:'assets/dialogue/bubble-10.png',text:'벽에 해바라기 그림이 그려져 있네! 🌻\n해바라기는 모두 몇 개일까?\n정답을 입력해봐!',size:15},
+  9:{bx:292,by:1003,bw:502,bh:263,tx:338,ty:1068,tw:425,th:155,bubble:'assets/dialogue/bubble-10.png',text:'벽에 해바라기 그림이 그려져 있네! 🌻\n해바라기는 모두 몇 개일까?\n정답을 입력해봐!',size:13},
   10:{bx:295,by:1100,bw:480,bh:235,tx:330,ty:1155,tw:420,th:150,bubble:'assets/dialogue/bubble-11.png',text:'조금 더 가다가 오른쪽을 보니까\n계단이 보여!\n여기가 공주도서관으로 가는 길일까?',size:15},
   11:{bx:300,by:1100,bw:490,bh:210,tx:325,ty:1160,tw:430,th:135,bubble:'assets/dialogue/bubble-12.png',text:'계단 오느라 힘들었지?\n드디어 보인다!\n건물 앞으로 가보자!',size:15},
   12:{bx:295,by:1150,bw:480,bh:210,tx:325,ty:1195,tw:430,th:140,bubble:'assets/dialogue/bubble-13.png',text:'드디어 공주도서관에 도착했어!\n이제 마지막 관문을 통과하러\n공주도서관에 들어가 보자.',size:15},
