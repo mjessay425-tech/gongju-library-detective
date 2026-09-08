@@ -191,21 +191,21 @@ function addCharacterBlink(s,stage){
 // It is pointer-events:none so all original transparent controls remain usable.
 const dialogueData={
   0:{bx:60,by:410,bw:730,bh:245,tx:135,ty:450,tw:590,th:150,bubble:'assets/dialogue/bubble-01.png',text:'명탐정 냥냥에게 의뢰가 도착했어요!\n공주에 숨겨진 도서관을 찾아보자냥!',size:19},
-  1:{bx:280,by:945,bw:475,bh:240,tx:325,ty:995,tw:405,th:160,bubble:'assets/dialogue/bubble-02.png',text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:18},
-  2:{bx:194,by:515,bw:460,bh:315,tx:235,ty:575,tw:380,th:220,bubble:'assets/dialogue/bubble-03.png',text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:18},
-  3:{bx:295,by:980,bw:481,bh:221,tx:330,ty:1040,tw:400,th:130,bubble:'assets/dialogue/bubble-04.png',text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:18},
-  4:{bx:284,by:906,bw:494,bh:215,tx:375,ty:975,tw:370,th:125,bubble:'assets/dialogue/bubble-05.png',text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:18},
-  5:{bx:299,by:1083,bw:497,bh:201,tx:335,ty:1165,tw:430,th:115,bubble:'assets/dialogue/bubble-06.png',text:'오른쪽 위로 공주도서관이 보이네!\n잘 가고 있는 것 같아.',size:18},
-  6:{bx:330,by:757,bw:324,bh:292,tx:357,ty:815,tw:270,th:210,bubble:'assets/dialogue/bubble-07.png',text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:18},
-  7:{bx:310,by:958,bw:430,bh:248,tx:345,ty:1055,tw:370,th:135,bubble:'assets/dialogue/bubble-08.png',text:'나무 표지판에\n써져 있는 글자를 읽어보자냥!\n정답을 입력해봐!',size:18},
+  1:{bx:280,by:945,bw:475,bh:240,tx:325,ty:995,tw:405,th:160,bubble:'assets/dialogue/bubble-02.png',text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:16},
+  2:{bx:194,by:515,bw:460,bh:315,tx:235,ty:575,tw:380,th:220,bubble:'assets/dialogue/bubble-03.png',text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:16},
+  3:{bx:295,by:980,bw:481,bh:221,tx:330,ty:1040,tw:400,th:130,bubble:'assets/dialogue/bubble-04.png',text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:16},
+  4:{bx:284,by:906,bw:494,bh:215,tx:375,ty:975,tw:370,th:125,bubble:'assets/dialogue/bubble-05.png',text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:16},
+  5:{bx:299,by:1083,bw:497,bh:201,tx:335,ty:1165,tw:430,th:115,bubble:'assets/dialogue/bubble-06.png',text:'오른쪽 위로 공주도서관이 보이네!\n잘 가고 있는 것 같아.',size:16},
+  6:{bx:330,by:757,bw:324,bh:292,tx:357,ty:815,tw:270,th:210,bubble:'assets/dialogue/bubble-07.png',text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:16},
+  7:{bx:310,by:958,bw:430,bh:248,tx:345,ty:1055,tw:370,th:135,bubble:'assets/dialogue/bubble-08.png',text:'나무 표지판에\n써져 있는 글자를 읽어보자냥!\n정답을 입력해봐!',size:16},
   8:null,
-  9:{bx:292,by:1003,bw:502,bh:263,tx:338,ty:1068,tw:425,th:155,bubble:'assets/dialogue/bubble-10.png',text:'벽에 해바라기 그림이 그려져 있네! 🌻\n해바라기는 모두 몇 개일까?\n정답을 입력해봐!',size:18},
-  10:{bx:295,by:1100,bw:480,bh:235,tx:330,ty:1155,tw:420,th:150,bubble:'assets/dialogue/bubble-11.png',text:'조금 더 가다가 오른쪽을 보니까\n계단이 보여!\n여기가 공주도서관으로 가는 길일까?',size:18},
-  11:{bx:300,by:1100,bw:490,bh:210,tx:325,ty:1160,tw:430,th:135,bubble:'assets/dialogue/bubble-12.png',text:'계단 오느라 힘들었지?\n드디어 보인다!\n건물 앞으로 가보자!',size:18},
-  12:{bx:295,by:1150,bw:480,bh:210,tx:325,ty:1195,tw:430,th:140,bubble:'assets/dialogue/bubble-13.png',text:'드디어 공주도서관에 도착했어!\n이제 마지막 관문을 통과하러\n공주도서관에 들어가 보자.',size:18},
-  13:{bx:247,by:727,bw:361,bh:197,tx:270,ty:760,tw:315,th:105,bubble:'assets/dialogue/bubble-14.png',text:'와! 정말 도착했잖아!\n너 정말 명탐정이다!',size:18},
-  14:{bx:315,by:1047,bw:460,bh:242,tx:345,ty:1095,tw:400,th:175,bubble:'assets/dialogue/bubble-15.png',text:'드디어 도착했어!\n하지만 이 간판에 적힌 글이\n중요한 단서일지도 몰라!\n무엇이 쓰여 있는지 맞춰보자냥!',size:18},
-  15:{bx:384,by:1017,bw:411,bh:302,tx:420,ty:1070,tw:350,th:225,bubble:'assets/dialogue/bubble-16.png',text:'의뢰 해결!\n공주도서관 종합자료실에\n도착했어!\n안으로 들어가서\n상품을 받아가자!',size:18}
+  9:{bx:292,by:1003,bw:502,bh:263,tx:338,ty:1068,tw:425,th:155,bubble:'assets/dialogue/bubble-10.png',text:'벽에 해바라기 그림이 그려져 있네! 🌻\n해바라기는 모두 몇 개일까?\n정답을 입력해봐!',size:16},
+  10:{bx:295,by:1100,bw:480,bh:235,tx:330,ty:1155,tw:420,th:150,bubble:'assets/dialogue/bubble-11.png',text:'조금 더 가다가 오른쪽을 보니까\n계단이 보여!\n여기가 공주도서관으로 가는 길일까?',size:16},
+  11:{bx:300,by:1100,bw:490,bh:210,tx:325,ty:1160,tw:430,th:135,bubble:'assets/dialogue/bubble-12.png',text:'계단 오느라 힘들었지?\n드디어 보인다!\n건물 앞으로 가보자!',size:16},
+  12:{bx:295,by:1150,bw:480,bh:210,tx:325,ty:1195,tw:430,th:140,bubble:'assets/dialogue/bubble-13.png',text:'드디어 공주도서관에 도착했어!\n이제 마지막 관문을 통과하러\n공주도서관에 들어가 보자.',size:16},
+  13:{bx:247,by:727,bw:361,bh:197,tx:270,ty:760,tw:315,th:105,bubble:'assets/dialogue/bubble-14.png',text:'와! 정말 도착했잖아!\n너 정말 명탐정이다!',size:16},
+  14:{bx:315,by:1047,bw:460,bh:242,tx:345,ty:1095,tw:400,th:175,bubble:'assets/dialogue/bubble-15.png',text:'드디어 도착했어!\n하지만 이 간판에 적힌 글이\n중요한 단서일지도 몰라!\n무엇이 쓰여 있는지 맞춰보자냥!',size:16},
+  15:{bx:384,by:1017,bw:411,bh:302,tx:420,ty:1070,tw:350,th:225,bubble:'assets/dialogue/bubble-16.png',text:'의뢰 해결!\n공주도서관 종합자료실에\n도착했어!\n안으로 들어가서\n상품을 받아가자!',size:16}
 };
 function addTypingDialogue(s,stage){
   const d=dialogueData[stage];
