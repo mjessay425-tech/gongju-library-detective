@@ -194,7 +194,7 @@ const dialogueData={
   1:{bx:280,by:945,bw:475,bh:240,tx:325,ty:995,tw:405,th:160,bubble:'assets/dialogue/bubble-02.png',text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:15},
   2:{bx:194,by:515,bw:460,bh:315,tx:235,ty:575,tw:380,th:220,bubble:'assets/dialogue/bubble-03.png',text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:15},
   3:{bx:295,by:980,bw:481,bh:221,tx:330,ty:1040,tw:400,th:130,bubble:'assets/dialogue/bubble-04.png',text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:15},
-  4:{bx:300,by:890,bw:494,bh:220,tx:375,ty:975,tw:370,th:125,bubble:'assets/dialogue/bubble-05.png',text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:15},
+  4:{bx:220,by:850,bw:494,bh:220,tx:375,ty:975,tw:370,th:125,bubble:'assets/dialogue/bubble-05.png',text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:15},
   5:{bx:299,by:1083,bw:497,bh:201,tx:335,ty:1165,tw:430,th:115,bubble:'assets/dialogue/bubble-06.png',text:'오른쪽 위로 공주도서관이 보이네!\n잘 가고 있는 것 같아.',size:15},
   6:{bx:330,by:757,bw:324,bh:292,tx:357,ty:815,tw:270,th:210,bubble:'assets/dialogue/bubble-07.png',text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:15},
   7:{bx:310,by:958,bw:430,bh:248,tx:345,ty:1055,tw:370,th:135,bubble:'assets/dialogue/bubble-08.png',text:'나무 표지판에\n써져 있는 글자를 읽어보자냥!\n정답을 입력해봐!',size:15},
