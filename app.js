@@ -47,7 +47,7 @@ function addInput(s,x,y,w,h,sw=832,sh=1792){
   i.addEventListener('blur',()=>{ if(!i.value) i.classList.remove('is-editing'); });
   return i;
 }
-function modal(t){$('#modalText').textContent=t;$('#modal').classList.remove('hidden')}
+function modal(t,wrong=false){const card=$('#modalText');card.textContent=t;card.classList.toggle('wrong-modal',wrong);$('#modal').classList.remove('hidden')}
 function closeModal(){ $('#modal').classList.add('hidden'); }
 function correct(){ fromCorrect=idx; $('#correct').classList.remove('hidden'); addCorrectCelebration(); }
 function nextAfterCorrect(){
@@ -66,7 +66,7 @@ function normalizeAnswer(v){
 function check(){
   const v=normalizeAnswer(currentInput?.value||'');
   const ok=(answers[idx]||[]).some(a=>v===normalizeAnswer(a));
-  if(ok) correct(); else modal('다시 한번 고민해보자!');
+  if(ok) correct(); else modal('다시 한번 고민해보자!',true);
 }
 function memoZone(s,story,x,y,w,h,sw=832,sh=1792){
   zone(s,x,y,w,h,()=>modal(memos[story]||'힌트를 다시 살펴보자!'),80,sw,sh);
@@ -99,7 +99,7 @@ function addFx(s){
   addCharacterBlink(s, idx);
   addTypingDialogue(s, idx);
   if(idx===13) addDogSparkles(s);
-  if(idx===15) addFinalCelebration(s);
+  if(idx===15){ addFinalCelebration(s); addFinalPollen(s); }
 }
 function addDogSparkles(s){
   if(s.querySelector('.dog-sparkles')) return;
@@ -161,6 +161,22 @@ function addFinalCelebration(s){
   s.appendChild(buildFireworkFX('fx-final-celebrate',true));
 }
 
+function addFinalPollen(s){
+  if(s.querySelector('.final-pollen')) return;
+  const fx=document.createElement('div');
+  fx.className='final-pollen';
+  for(let i=0;i<18;i++){
+    const e=document.createElement('i');
+    e.style.left=(7+i*5.1+(i%3)*2)+'%';
+    e.style.top=(58+(i%6)*6)+'%';
+    e.style.setProperty('--delay',((i%9)*.24)+'s');
+    e.style.setProperty('--drift',(((i%5)-2)*24)+'px');
+    e.style.setProperty('--rot',((i%2?1:-1)*(18+(i%4)*12))+'deg');
+    fx.appendChild(e);
+  }
+  s.appendChild(fx);
+}
+
 // Character blink: a small, animation-only eyelid overlay. The original artwork
 // stays untouched; the overlay is pointer-events:none and appears briefly at
 // irregular intervals. Coordinates are per original 852/853px artwork.
@@ -179,20 +195,20 @@ function addCharacterBlink(s,stage){
 // Dialogue typing: fresh HTML text is revealed one Korean character at a time.
 // It is pointer-events:none so all original transparent controls remain usable.
 const dialogueData={
-  0:{tx:135,ty:450,tw:590,th:150,text:'명탐정 냥냥에게 의뢰가 도착했어요!\n공주에 숨겨진 도서관을 찾아보자냥!',size:19},
-  1:{tx:325,ty:995,tw:405,th:160,text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:15},
-  2:{tx:235,ty:575,tw:380,th:220,text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:15},
-  3:{tx:330,ty:1040,tw:400,th:130,text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:15},
+  0:{tx:135,ty:468,tw:590,th:150,text:'명탐정 냥냥에게 의뢰가 도착했어요!\n공주에 숨겨진 도서관을 찾아보자냥!',size:19},
+  1:{tx:325,ty:1020,tw:405,th:160,text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:15},
+  2:{tx:235,ty:595,tw:380,th:220,text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:15},
+  3:{tx:330,ty:1075,tw:400,th:130,text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:15},
   4:{tx:375,ty:975,tw:370,th:125,text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:15},
-  5:{tx:335,ty:1165,tw:430,th:115,text:'오른쪽 위로 공주도서관이 보이네!\n잘 가고 있는 것 같아.',size:15},
-  6:{tx:357,ty:815,tw:270,th:210,text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:15},
+  5:{tx:335,ty:1145,tw:430,th:115,text:'오른쪽 위로 공주도서관이 보이네!\n잘 가고 있는 것 같아.',size:15},
+  6:{tx:357,ty:780,tw:270,th:210,text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:15},
   7:{tx:345,ty:1055,tw:370,th:135,text:'나무 표지판에\n써져 있는 글자를 읽어보자냥!\n정답을 입력해봐!',size:15},
   9:{tx:338,ty:1068,tw:425,th:155,text:'벽에 해바라기 그림이 그려져 있네! 🌻\n해바라기는 모두 몇 개일까?\n정답을 입력해봐!',size:13},
-  10:{tx:330,ty:1155,tw:420,th:150,text:'조금 더 가다가 오른쪽을 보니까\n계단이 보여!\n여기가 공주도서관으로 가는 길일까?',size:15},
-  11:{tx:325,ty:1160,tw:430,th:135,text:'계단 오느라 힘들었지?\n드디어 보인다!\n건물 앞으로 가보자!',size:15},
-  12:{tx:325,ty:1195,tw:430,th:140,text:'드디어 공주도서관에 도착했어!\n이제 마지막 관문을 통과하러\n공주도서관에 들어가 보자.',size:15},
-  13:{tx:270,ty:760,tw:315,th:105,text:'와! 정말 도착했잖아!\n너 정말 명탐정이다!',size:15},
-  14:{tx:345,ty:1095,tw:400,th:175,text:'드디어 도착했어!\n하지만 이 간판에 적힌 글이\n중요한 단서일지도 몰라!\n무엇이 쓰여 있는지 맞춰보자냥!',size:15},
+  10:{tx:330,ty:1135,tw:420,th:150,text:'조금 더 가다가 오른쪽을 보니까\n계단이 보여!\n여기가 공주도서관으로 가는 길일까?',size:15},
+  11:{tx:325,ty:1115,tw:430,th:135,text:'계단 오느라 힘들었지?\n드디어 보인다!\n건물 앞으로 가보자!',size:15},
+  12:{tx:325,ty:1150,tw:430,th:140,text:'드디어 공주도서관에 도착했어!\n이제 마지막 관문을 통과하러\n공주도서관에 들어가 보자.',size:15},
+  13:{tx:270,ty:715,tw:315,th:105,text:'와! 정말 도착했잖아!\n너 정말 명탐정이다!',size:15},
+  14:{tx:345,ty:1050,tw:400,th:175,text:'드디어 도착했어!\n하지만 이 간판에 적힌 글이\n중요한 단서일지도 몰라!\n무엇이 쓰여 있는지 맞춰보자냥!',size:15},
   15:{tx:420,ty:1070,tw:350,th:225,text:'의뢰 해결!\n공주도서관 종합자료실에\n도착했어!\n안으로 들어가서\n상품을 받아가자!',size:15}
 };
 function addTypingDialogue(s,stage){
