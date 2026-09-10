@@ -157,4 +157,4 @@ body{display:flex;justify-content:center;min-height:100vh}
 @keyframes pollenRise{0%{opacity:0;transform:translate3d(0,18px,0) rotate(0deg) scale(.65)}12%{opacity:.8}72%{opacity:.65}100%{opacity:0;transform:translate3d(var(--drift),-250px,0) rotate(var(--rot)) scale(1)}}
 
 /* Wrong-answer popup text only: 24px -> 18px. */
-.modal-card.wrong-modal{font-size:18px}
+.modal-card.wrong-modal{font-size:15px}
