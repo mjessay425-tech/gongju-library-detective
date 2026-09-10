@@ -198,7 +198,7 @@ const dialogueData={
   0:{tx:135,ty:468,tw:590,th:150,text:'명탐정 냥냥에게 의뢰가 도착했어요!\n공주에 숨겨진 도서관을 찾아보자냥!',size:19},
   1:{tx:325,ty:1020,tw:405,th:160,text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:15},
   2:{tx:235,ty:595,tw:380,th:220,text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:15},
-  3:{tx:330,ty:1055,tw:400,th:130,text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:15},
+  3:{tx:330,ty:1040,tw:400,th:130,text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:15},
   4:{tx:375,ty:975,tw:370,th:125,text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:15},
   5:{tx:335,ty:1145,tw:430,th:115,text:'오른쪽 위로 공주도서관이 보이네!\n잘 가고 있는 것 같아.',size:15},
   6:{tx:372,ty:780,tw:270,th:210,text:'어느 쪽으로 가야\n공주도서관이 나올까?\n표지판 퍼즐을 맞춰서\n단서를 찾아보자냥!',size:15},
@@ -243,7 +243,7 @@ function render(){
   addFx(s);
 
   // Intro / story 1 / story 2 remain as before.
-  if(idx===0){ zone(s,180,1181,471,117,showNext,40,853,1844); return; }
+  if(idx===0){ zone(s,130,1145,570,180,showNext,40,853,1844); return; }
   if(idx===1){ zone(s,194,1406,435,84,showNext,40,853,1844); memoZone(s,1,40,1510,770,210,853,1844); return; }
   if(idx===2){
     // Story 1 choice: top retry, bottom correct.
