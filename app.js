@@ -191,7 +191,7 @@ function addCharacterBlink(s,stage){
 // It is pointer-events:none so all original transparent controls remain usable.
 const dialogueData={
   0:{bx:60,by:410,bw:730,bh:245,tx:135,ty:450,tw:590,th:150,bubble:'assets/dialogue/bubble-01.png',text:'명탐정 냥냥에게 의뢰가 도착했어요!\n공주에 숨겨진 도서관을 찾아보자냥!',size:19},
-  1:{bx:280,by:945,bw:475,bh:240,tx:325,ty:995,tw:405,th:160,bubble:'assets/dialogue/bubble-02.png',text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:15},
+  1:{bx:320,by:900,bw:475,bh:240,tx:325,ty:995,tw:405,th:160,bubble:'assets/dialogue/bubble-02.png',text:'여기가 바로 우리 수사의 시작점!\n공주목!\n여기서 어떻게 가야될까?',size:15},
   2:{bx:194,by:515,bw:460,bh:315,tx:235,ty:575,tw:380,th:220,bubble:'assets/dialogue/bubble-03.png',text:'혹시 공주도서관을 찾고있니?\n내가 가는 길을 잘 아는데!\n간판 자음에 ‘ㄱㅈㅈ’이\n있는 곳으로 가봐!',size:15},
   3:{bx:295,by:980,bw:481,bh:221,tx:330,ty:1040,tw:400,th:130,bubble:'assets/dialogue/bubble-04.png',text:'어? 이쪽으로 가면\n공주도서관으로 갈 수 있다던데?',size:15},
   4:{bx:272,by:906,bw:494,bh:2,tx:375,ty:975,tw:370,th:125,bubble:'assets/dialogue/bubble-05.png',text:'흠..! 예쁜 주택이 보이네!\n파란색 주소 표지판에\n적힌 숫자는 무엇일까?',size:15},
