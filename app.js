@@ -417,8 +417,8 @@ function renderPuzzle(s){
   const pieces=[
    {src:'puzzle-1.png',x:462,y:1340,w:139,h:146},
    {src:'puzzle-2.png',x:640,y:1340,w:183,h:146},
-   {src:'puzzle-3.png',x:82,y:1340,w:140,h:146},
-   {src:'puzzle-4.png',x:247,y:1340,w:134,h:146}
+   {src:'puzzle-3.png',x:62,y:1340,w:140,h:146},
+   {src:'puzzle-4.png',x:227,y:1340,w:134,h:146}
   ];
 
   // Exact left-to-right order inside the dashed guide:
