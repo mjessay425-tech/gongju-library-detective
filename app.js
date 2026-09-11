@@ -303,7 +303,7 @@ function render(){
 
   // Intro / story 1 / story 2 remain as before.
   if(idx===0){ zone(s,130,1145,570,180,showNext,40,853,1844); return; }
-  if(idx===1){ zone(s,194,1406,435,250,showNext,40,853,1844); return; }
+  if(idx===1){ zone(s,194,1406,435,190,showNext,40,853,1844); return; }
   if(idx===2){
     // Story 1 choice: top retry, bottom correct.
     zone(s,96,1074,644,107,()=>modal('다시 한번 고민해보자!'),60,853,1844);
