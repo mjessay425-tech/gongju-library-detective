@@ -76,7 +76,66 @@ function showNext(){
   if(screen) screen.classList.add('screen-exit');
   setTimeout(()=>{idx++;render();},170);
 }
+function addNextButtonHint(s){
+  if(s.querySelector('.next-button-hint')) return;
 
+  const styleId='next-button-hint-style';
+  if(!document.getElementById(styleId)){
+    const style=document.createElement('style');
+    style.id=styleId;
+    style.textContent=`
+      .next-button-hint{
+        position:absolute;
+        left:${pct(440,853)};
+        top:${pct(977,1844)};
+        width:${pct(170,853)};
+        height:${pct(100,1844)};
+        transform:translate(-50%,-50%);
+        z-index:30;
+        pointer-events:none;
+      }
+
+      .next-button-hint span{
+        position:absolute;
+        left:50%;
+        top:50%;
+        width:100%;
+        height:72%;
+        transform:translate(-50%,-50%) scale(.55);
+        border:3px solid rgba(255,255,255,.9);
+        border-radius:50%;
+        opacity:0;
+        animation:nextButtonPulse 1.8s ease-out var(--delay) infinite;
+      }
+
+      @keyframes nextButtonPulse{
+        0%{
+          opacity:0;
+          transform:translate(-50%,-50%) scale(.55);
+        }
+        18%{
+          opacity:.9;
+        }
+        100%{
+          opacity:0;
+          transform:translate(-50%,-50%) scale(1.18);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  const hint=document.createElement('div');
+  hint.className='next-button-hint';
+
+  for(let i=0;i<3;i++){
+    const ring=document.createElement('span');
+    ring.style.setProperty('--delay',(i*.6)+'s');
+    hint.appendChild(ring);
+  }
+
+  s.appendChild(hint);
+}
 function addFx(s){
   // V19 base effects, kept deliberately subtle.
   s.classList.add('fx-enabled');
@@ -244,7 +303,7 @@ function render(){
 
   // Intro / story 1 / story 2 remain as before.
   if(idx===0){ zone(s,130,1145,570,180,showNext,40,853,1844); return; }
-  if(idx===1){ zone(s,194,1406,435,114,showNext,40,853,1844); return; }
+  if(idx===1){ zone(s,194,1406,435,124,showNext,40,853,1844); return; }
   if(idx===2){
     // Story 1 choice: top retry, bottom correct.
     zone(s,96,1074,644,107,()=>modal('다시 한번 고민해보자!'),60,853,1844);
@@ -269,6 +328,7 @@ function render(){
     return;
   }
   if(idx===5){
+  addNextButtonHint(s);
     // Story 4: the entire screen is the invisible next-page button.
     // Tapping anywhere on this stage advances immediately.
     zone(s,0,0,853,1844,showNext,60,853,1844);
