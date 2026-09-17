@@ -294,12 +294,33 @@ function addTypingDialogue(s,stage){
   requestAnimationFrame(()=>setTimeout(tick,260));
 }
 
+function showNoticePopup() {
+  const modal = document.createElement('div');
+  modal.className = 'notice-popup';
+
+  modal.innerHTML = `
+    <div class="notice-popup-card">
+      <div class="notice-popup-text">
+        선물용 굿즈가 모두 소진되었습니다.<br>
+        많은 관심과 참여 감사드립니다.<br>
+        행사는 10월 6일에 재오픈됩니다-!
+      </div>
+      <button type="button">게임만 해보기</button>
+    </div>
+  `;
+
+  game.appendChild(modal);
+
+  modal.querySelector('button').onclick = () => modal.remove();
+}
+
 function render(){
   game.innerHTML=''; currentInput=null;
   const s=document.createElement('div'); s.className='screen';
   const b=document.createElement('img'); b.className='bg'; b.src='assets/'+files[idx]; b.alt='';
   s.appendChild(b); game.appendChild(s);
   addFx(s);
+if(idx===0) showNoticePopup();
 
   // Intro / story 1 / story 2 remain as before.
   if(idx===0){ zone(s,130,1145,570,180,showNext,40,853,1844); return; }
