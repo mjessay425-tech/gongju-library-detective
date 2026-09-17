@@ -181,7 +181,7 @@ body{display:flex;justify-content:center;min-height:100vh}
 }
 
 .notice-popup-text{
-  font-size:26px;
+  font-size:18px;
   line-height:1.65;
   font-weight:600;
   color:#333;
