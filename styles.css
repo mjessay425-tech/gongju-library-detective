@@ -158,3 +158,44 @@ body{display:flex;justify-content:center;min-height:100vh}
 
 /* Wrong-answer popup text only: 24px -> 15px. */
 .modal-card.wrong-modal{font-size:13px}
+
+.notice-popup{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(0,0,0,.62);
+}
+
+.notice-popup-card{
+  width:min(88%,620px);
+  padding:42px 32px 30px;
+  background:#fff4df;
+  border:4px solid #d28b2c;
+  border-radius:28px;
+  box-shadow:0 15px 45px rgba(0,0,0,.35);
+  text-align:center;
+}
+
+.notice-popup-text{
+  font-size:26px;
+  line-height:1.65;
+  font-weight:600;
+  color:#333;
+  word-break:keep-all;
+}
+
+.notice-popup button{
+  margin-top:28px;
+  padding:15px 42px;
+  border:0;
+  border-radius:14px;
+  background:#4a9d17;
+  color:#fff;
+  font-size:22px;
+  font-weight:bold;
+  cursor:pointer;
+}
